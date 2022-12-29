@@ -1,7 +1,8 @@
 export const Searchbar = ({ submitAction }) => {
   const onFormSubmit = e => {
     e.preventDefault();
-    submitAction(new FormData(e.target).get('query'));
+    submitAction(new FormData(e.target).get('query').trim());
+    e.target.reset();
   };
   return (
     <header className="Searchbar">
