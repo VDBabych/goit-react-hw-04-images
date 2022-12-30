@@ -12,7 +12,7 @@ export const Modal = ({ image, clickAction }) => {
     return () => {
       window.removeEventListener('keydown', onEscClick);
     };
-  }, []);
+  }, [clickAction]);
 
   const onOverlayClick = () => {
     clickAction('');
