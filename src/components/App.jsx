@@ -17,7 +17,7 @@ export const App = () => {
     if (query === null) {
       return;
     }
-    (async () => {
+    const effectAction = async () => {
       setBtnShouldRender(false);
       try {
         setIsLoading(true);
@@ -32,7 +32,8 @@ export const App = () => {
       } finally {
         setIsLoading(false);
       }
-    })();
+    };
+    effectAction();
   }, [page, query]);
 
   const onFormSubmit = str => {
